@@ -16,9 +16,14 @@ import java.util.List;
 import br.com.caelum.casadocodigo.R;
 import br.com.caelum.casadocodigo.adapter.LivroAdapter;
 import br.com.caelum.casadocodigo.modelo.Livro;
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class ListaLivrosFragment extends Fragment {
 
+
+    @BindView(R.id.fragment_lista_livros)
+    RecyclerView lista;
 
     @Nullable
     @Override
@@ -29,8 +34,8 @@ public class ListaLivrosFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_lista_livros, container, false);
 
+        ButterKnife.bind(this, view);
 
-        RecyclerView lista = view.findViewById(R.id.fragment_lista_livros);
 
         List<Livro> livros = new ArrayList<>();
         for (int i = 0; i < 20; i++) {
