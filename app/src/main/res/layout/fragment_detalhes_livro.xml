@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <ImageView
+                android:id="@+id/detalhes_livro_foto"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_margin="5dp"
+                android:layout_weight="1" />
+
+            <android.support.design.widget.CoordinatorLayout
+                android:layout_width="0dp"
+                android:layout_height="250dp"
+                android:layout_margin="7dp"
+                android:layout_weight="3">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="7dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/detalhes_livro_nome"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="NOME DO LIVRO VIRÁ NESSA PARTE AQUI "
+                        android:textColor="@color/colorAccent"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+
+                    <TextView
+                        android:id="@+id/detalhes_livro_autores"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Nome dos autores ficarão aqui"
+                        android:textSize="13sp"
+                        android:textStyle="italic" />
+
+                    <Button
+                        android:id="@+id/detalhes_livro_comprar_fisico"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center|bottom"
+                        android:text="Comprar Livro Físico - R$ 14,99"
+                        android:textColor="#FFF"
+                        android:textStyle="bold"
+                        app:backgroundTint="@color/colorAccent"
+                        app:elevation="10dp"
+
+                        />
+
+                    <Button
+                        android:id="@+id/detalhes_livro_comprar_ebook"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center|bottom"
+                        android:text="Comprar E-Book - R$ 12,99"
+                        android:textColor="#FFF"
+                        android:textStyle="bold"
+                        app:backgroundTint="@color/colorAccent"
+                        app:elevation="10dp"
+
+                        />
+
+                    <Button
+                        android:id="@+id/detalhes_livro_comprar_ambos"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center|bottom"
+                        android:text="Comprar Ambos - R$ 19,99"
+                        android:textColor="#FFF"
+                        android:textStyle="bold"
+                        app:backgroundTint="@color/colorAccent"
+                        app:elevation="10dp"
+
+                        />
+                </LinearLayout>
+
+
+            </android.support.design.widget.CoordinatorLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/detalhes_livro_descricao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="Aqui ficará a descrição"
+            android:textColor="#000000"
+            android:textStyle="italic" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Detalhes do Livro"
+            android:textColor="#2c83e6"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Nº Páginas :" />
+
+            <TextView
+                android:id="@+id/detalhes_livro_num_paginas"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Data Publicação :" />
+
+            <TextView
+                android:id="@+id/detalhes_livro_data_publicacao"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_margin="6dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="ISBN :" />
+
+            <TextView
+                android:id="@+id/detalhes_livro_isbn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</ScrollView>
