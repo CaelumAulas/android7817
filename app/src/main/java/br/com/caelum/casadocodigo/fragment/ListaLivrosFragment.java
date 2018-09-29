@@ -48,6 +48,7 @@ public class ListaLivrosFragment extends Fragment {
 
         lista.setLayoutManager(new LinearLayoutManager(getContext()));
 
+
         return view;
 
 
