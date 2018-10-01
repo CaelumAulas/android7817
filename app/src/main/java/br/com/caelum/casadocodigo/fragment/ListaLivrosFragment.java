@@ -11,7 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import br.com.caelum.casadocodigo.R;
 import br.com.caelum.casadocodigo.adapter.LivroAdapter;
@@ -25,6 +24,19 @@ public class ListaLivrosFragment extends Fragment {
     @BindView(R.id.fragment_lista_livros)
     RecyclerView lista;
 
+
+    public static ListaLivrosFragment com(ArrayList<Livro> livros) {
+        ListaLivrosFragment listaLivrosFragment = new ListaLivrosFragment();
+
+        Bundle argumentos = new Bundle();
+        argumentos.putSerializable("livros", livros);
+
+        listaLivrosFragment.setArguments(argumentos);
+
+        return listaLivrosFragment;
+
+    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -36,13 +48,9 @@ public class ListaLivrosFragment extends Fragment {
 
         ButterKnife.bind(this, view);
 
+        Bundle arguments = getArguments();
+        ArrayList<Livro> livros = (ArrayList<Livro>) arguments.getSerializable("livros");
 
-        List<Livro> livros = new ArrayList<>();
-        for (int i = 0; i < 20; i++) {
-            Livro livro = new Livro();
-            livro.setNome("" + i);
-            livros.add(livro);
-        }
 
         lista.setAdapter(new LivroAdapter(livros));
 
