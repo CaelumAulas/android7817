@@ -6,6 +6,9 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+
 import java.util.ArrayList;
 
 import br.com.caelum.casadocodigo.R;
@@ -24,9 +27,28 @@ public class MainActivity extends AppCompatActivity implements LivroDelegate {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        new WebClient(this).buscaLivros();
-        exibe(new CarregandoFragment(), false);
+        if (naoTiverDados(savedInstanceState)) {
+            new WebClient().buscaLivros();
+            exibe(new CarregandoFragment(), false);
 
+        }
+    }
+
+    private boolean naoTiverDados(Bundle savedInstanceState) {
+        return savedInstanceState == null;
+    }
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        EventBus.getDefault().register(this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        EventBus.getDefault().unregister(this);
 
     }
 
@@ -38,11 +60,13 @@ public class MainActivity extends AppCompatActivity implements LivroDelegate {
     }
 
     @Override
+    @Subscribe
     public void lidaCom(ArrayList<Livro> livros) {
         exibe(ListaLivrosFragment.com(livros), false);
     }
 
     @Override
+    @Subscribe
     public void lidaCom(Throwable erro) {
 
         exibe(ErroFragment.com(erro), false);
