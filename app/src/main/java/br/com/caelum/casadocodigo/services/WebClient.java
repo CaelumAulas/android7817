@@ -13,7 +13,7 @@ import retrofit2.Retrofit;
 
 public class WebClient {
 
-    public void buscaLivros() {
+    public void buscaLivros(int indicePrimeiro, int qtd) {
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://cdcmob.herokuapp.com/")
@@ -25,7 +25,7 @@ public class WebClient {
         LivroService service = retrofit.create(LivroService.class);
 
 
-        Call<ArrayList<Livro>> chamada = service.buscaLivros();
+        Call<ArrayList<Livro>> chamada = service.buscaLivros(qtd, indicePrimeiro);
 
 
         chamada.enqueue(new Callback<ArrayList<Livro>>() {

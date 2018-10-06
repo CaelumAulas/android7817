@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity  {
     }
 
     private void buscaLivros() {
-        new WebClient().buscaLivros();
+        new WebClient().buscaLivros(0, 5);
     }
 
     private boolean naoTiverDados(Bundle savedInstanceState) {
@@ -58,13 +58,27 @@ public class MainActivity extends AppCompatActivity  {
     @Subscribe
     public void lidaCom(Livro livro) {
 
+
         exibe(DetalhesLivroFragment.com(livro), true);
 
     }
 
     @Subscribe
     public void lidaCom(ArrayList<Livro> livros) {
-        exibe(ListaLivrosFragment.com(livros), false);
+
+        FragmentManager manager = getSupportFragmentManager();
+
+        Fragment fragment = manager.findFragmentById(R.id.frame_principal);
+
+        if (fragment instanceof ListaLivrosFragment) {
+
+            ListaLivrosFragment livrosFragment = (ListaLivrosFragment) fragment;
+
+            livrosFragment.adiciona(livros);
+
+        } else {
+            exibe(ListaLivrosFragment.com(livros), false);
+        }
     }
 
     @Subscribe
