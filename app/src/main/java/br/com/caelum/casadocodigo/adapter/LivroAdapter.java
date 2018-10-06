@@ -5,7 +5,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 import org.greenrobot.eventbus.EventBus;
 
@@ -45,6 +48,8 @@ public class LivroAdapter extends RecyclerView.Adapter {
 
         holder.nome.setText(livro.getNome());
 
+        Picasso.get().load(livro.getUrlFoto()).fit().into(holder.foto);
+
     }
 
     @Override
@@ -56,6 +61,9 @@ public class LivroAdapter extends RecyclerView.Adapter {
 
         @BindView(R.id.item_livro_nome)
         TextView nome;
+
+        @BindView(R.id.item_livro_foto)
+        ImageView foto;
 
         public MeuViewHolder(@NonNull View itemView) {
             super(itemView);
