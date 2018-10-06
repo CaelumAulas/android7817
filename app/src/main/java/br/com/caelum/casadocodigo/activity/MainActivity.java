@@ -12,6 +12,7 @@ import org.greenrobot.eventbus.Subscribe;
 import java.util.ArrayList;
 
 import br.com.caelum.casadocodigo.R;
+import br.com.caelum.casadocodigo.events.RefreshEvent;
 import br.com.caelum.casadocodigo.fragment.CarregandoFragment;
 import br.com.caelum.casadocodigo.fragment.DetalhesLivroFragment;
 import br.com.caelum.casadocodigo.fragment.ErroFragment;
@@ -27,10 +28,13 @@ public class MainActivity extends AppCompatActivity  {
         setContentView(R.layout.activity_main);
 
         if (naoTiverDados(savedInstanceState)) {
-            new WebClient().buscaLivros();
+            buscaLivros();
             exibe(new CarregandoFragment(), false);
-
         }
+    }
+
+    private void buscaLivros() {
+        new WebClient().buscaLivros();
     }
 
     private boolean naoTiverDados(Bundle savedInstanceState) {
@@ -69,6 +73,11 @@ public class MainActivity extends AppCompatActivity  {
         exibe(ErroFragment.com(erro), false);
     }
 
+
+    @Subscribe
+    public void recebe(RefreshEvent event){
+        buscaLivros();
+    }
 
     public void exibe(Fragment fragment, boolean podeEmpilhar) {
 
