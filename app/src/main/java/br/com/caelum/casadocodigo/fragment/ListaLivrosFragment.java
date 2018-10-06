@@ -74,6 +74,8 @@ public class ListaLivrosFragment extends Fragment {
 
         actionBar.setDisplayHomeAsUpEnabled(false);
 
+        actionBar.setTitle("Catalogo");
+
 
     }
 }

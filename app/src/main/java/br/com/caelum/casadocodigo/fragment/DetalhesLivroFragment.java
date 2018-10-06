@@ -48,8 +48,12 @@ public class DetalhesLivroFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        Livro livro = getLivro();
+
         AppCompatActivity activity = (AppCompatActivity) getActivity();
         ActionBar actionBar = activity.getSupportActionBar();
+
+        actionBar.setTitle(livro.getNome());
 
         actionBar.setDisplayHomeAsUpEnabled(true);
 
@@ -68,8 +72,7 @@ public class DetalhesLivroFragment extends Fragment {
 
         ButterKnife.bind(this, view);
 
-        Bundle arguments = getArguments();
-        Livro livro = (Livro) arguments.getSerializable("livro");
+        Livro livro = getLivro();
 
         nome.setText(livro.getNome());
 
@@ -90,4 +93,12 @@ public class DetalhesLivroFragment extends Fragment {
 
         return true;
     }
+
+
+
+    private Livro getLivro() {
+        Bundle arguments = getArguments();
+        return (Livro) arguments.get("livro");
+    }
+
 }
