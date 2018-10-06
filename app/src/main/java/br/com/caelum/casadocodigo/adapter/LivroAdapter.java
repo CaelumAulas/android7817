@@ -7,10 +7,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import org.greenrobot.eventbus.EventBus;
+
 import java.util.List;
 
 import br.com.caelum.casadocodigo.R;
-import br.com.caelum.casadocodigo.interfaces.LivroDelegate;
 import br.com.caelum.casadocodigo.modelo.Livro;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -67,9 +68,7 @@ public class LivroAdapter extends RecyclerView.Adapter {
 
             Livro selecionado = livros.get(getAdapterPosition());
 
-            LivroDelegate delegate = (LivroDelegate) view.getContext();
-
-            delegate.lidaCom(selecionado);
+            EventBus.getDefault().post(selecionado);
         }
     }
 }

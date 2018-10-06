@@ -16,11 +16,10 @@ import br.com.caelum.casadocodigo.fragment.CarregandoFragment;
 import br.com.caelum.casadocodigo.fragment.DetalhesLivroFragment;
 import br.com.caelum.casadocodigo.fragment.ErroFragment;
 import br.com.caelum.casadocodigo.fragment.ListaLivrosFragment;
-import br.com.caelum.casadocodigo.interfaces.LivroDelegate;
 import br.com.caelum.casadocodigo.modelo.Livro;
 import br.com.caelum.casadocodigo.services.WebClient;
 
-public class MainActivity extends AppCompatActivity implements LivroDelegate {
+public class MainActivity extends AppCompatActivity  {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,20 +51,18 @@ public class MainActivity extends AppCompatActivity implements LivroDelegate {
 
     }
 
-    @Override
+    @Subscribe
     public void lidaCom(Livro livro) {
 
         exibe(DetalhesLivroFragment.com(livro), true);
 
     }
 
-    @Override
     @Subscribe
     public void lidaCom(ArrayList<Livro> livros) {
         exibe(ListaLivrosFragment.com(livros), false);
     }
 
-    @Override
     @Subscribe
     public void lidaCom(Throwable erro) {
 
