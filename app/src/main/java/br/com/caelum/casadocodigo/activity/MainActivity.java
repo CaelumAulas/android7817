@@ -1,10 +1,13 @@
 package br.com.caelum.casadocodigo.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -53,6 +56,27 @@ public class MainActivity extends AppCompatActivity  {
         super.onPause();
         EventBus.getDefault().unregister(this);
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+
+        return true;
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        if (item.getItemId() == R.id.menu_main_carrinho) {
+            Intent intent = new Intent(this, CarrinhoActivity.class);
+
+            startActivity(intent);
+        }
+
+        return false;
     }
 
     @Subscribe
