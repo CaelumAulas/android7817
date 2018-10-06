@@ -54,6 +54,7 @@ public class DetalhesLivroFragment extends Fragment {
         ActionBar actionBar = activity.getSupportActionBar();
 
         actionBar.setTitle(livro.getNome());
+        actionBar.setSubtitle(livro.getUrlFoto());
 
         actionBar.setDisplayHomeAsUpEnabled(true);
 
