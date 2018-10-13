@@ -1,0 +1,115 @@
+{
+  "project_info": {
+    "project_number": "6830711590",
+    "firebase_url": "https://casadocodigo59.firebaseio.com",
+    "project_id": "casadocodigo59",
+    "storage_bucket": "casadocodigo59.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:6830711590:android:a3d4e0ad47b98c1f",
+        "android_client_info": {
+          "package_name": "br.com.caelum.casadocodigo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "6830711590-5r7blttmmqh97nabnkepfodekugm1pl4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.caelum.casadocodigo",
+            "certificate_hash": "43eff4be85ca0cd232b12437a97c5bf6a367d0e9"
+          }
+        },
+        {
+          "client_id": "6830711590-4dvne18eig3ue4ogipbuc6e6idf8r3mn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAlzu4onND6QyfkeXnDIhyzypQuUTEH7K8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "6830711590-4dvne18eig3ue4ogipbuc6e6idf8r3mn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:6830711590:android:809ad6ec10a9bf3e",
+        "android_client_info": {
+          "package_name": "com.example.matheus.casadocodigocomlibs"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "6830711590-klgcavu1hlft6ndq1cmlgl364a3opv3n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.matheus.casadocodigocomlibs",
+            "certificate_hash": "43eff4be85ca0cd232b12437a97c5bf6a367d0e9"
+          }
+        },
+        {
+          "client_id": "6830711590-nc2ngc8pu12ukvcgu9ceiaoij295d3u3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.matheus.casadocodigocomlibs",
+            "certificate_hash": "706d8f6623418598d381bdf553f74b4e583a75fd"
+          }
+        },
+        {
+          "client_id": "6830711590-qluh6450dcsn6nbikoj8pocrhv1e36ms.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.matheus.casadocodigocomlibs",
+            "certificate_hash": "84097083e932efc9866a8c012dd0632a4d107b0f"
+          }
+        },
+        {
+          "client_id": "6830711590-4dvne18eig3ue4ogipbuc6e6idf8r3mn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAlzu4onND6QyfkeXnDIhyzypQuUTEH7K8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "6830711590-4dvne18eig3ue4ogipbuc6e6idf8r3mn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
