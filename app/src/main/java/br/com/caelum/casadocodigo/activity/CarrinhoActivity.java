@@ -1,5 +1,6 @@
 package br.com.caelum.casadocodigo.activity;
 
+import android.app.Application;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.ActionBar;
@@ -11,8 +12,11 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import javax.inject.Inject;
+
 import br.com.caelum.casadocodigo.R;
 import br.com.caelum.casadocodigo.adapter.ItensAdapter;
+import br.com.caelum.casadocodigo.application.CasaDoCodigoApplication;
 import br.com.caelum.casadocodigo.modelo.Carrinho;
 import br.com.caelum.casadocodigo.modelo.Item;
 import butterknife.BindView;
@@ -27,7 +31,8 @@ public class CarrinhoActivity extends AppCompatActivity {
     @BindView(R.id.lista_itens_carrinho)
     RecyclerView listaItens;
 
-    private Carrinho carrinho = new Carrinho();
+    @Inject
+    Carrinho carrinho;
 
 
     @Override
@@ -35,6 +40,8 @@ public class CarrinhoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_carrinho);
         ButterKnife.bind(this);
+
+        CasaDoCodigoApplication.getInstance().getComponent().injeta(this);
 
         ActionBar actionBar = getSupportActionBar();
 

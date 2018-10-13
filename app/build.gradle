@@ -31,12 +31,11 @@ dependencies {
     implementation 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
     implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
-
     implementation 'org.greenrobot:eventbus:3.1.1'
-
     implementation 'com.squareup.picasso:picasso:2.71828'
-
     implementation('com.vinaysshenoy:mugen:1.0.2') {
         exclude module: 'support-v4'
     }
+    implementation 'com.google.dagger:dagger:2.17'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.17'
 }
