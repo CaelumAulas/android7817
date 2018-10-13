@@ -13,6 +13,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import com.mugen.Mugen;
 import com.mugen.MugenCallbacks;
 
@@ -20,6 +23,7 @@ import java.util.ArrayList;
 
 import br.com.caelum.casadocodigo.R;
 import br.com.caelum.casadocodigo.adapter.LivroAdapter;
+import br.com.caelum.casadocodigo.adapter.LivroInvertidoAdapter;
 import br.com.caelum.casadocodigo.modelo.Livro;
 import br.com.caelum.casadocodigo.services.WebClient;
 import butterknife.BindView;
@@ -59,9 +63,6 @@ public class ListaLivrosFragment extends Fragment {
 
         Bundle arguments = getArguments();
         livros = (ArrayList<Livro>) arguments.getSerializable("livros");
-
-
-        lista.setAdapter(new LivroAdapter(livros));
 
         lista.setLayoutManager(new LinearLayoutManager(getContext()));
 
@@ -103,6 +104,32 @@ public class ListaLivrosFragment extends Fragment {
 
         actionBar.setTitle("Catalogo");
         actionBar.setSubtitle(null);
+
+
+        final FirebaseRemoteConfig remoteConfig = FirebaseRemoteConfig.getInstance();
+
+        remoteConfig.setDefaults(R.xml.remote_config);
+
+
+        remoteConfig.fetch(15)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+
+                        if (task.isSuccessful()) {
+                            remoteConfig.activateFetched();
+                        }
+
+                    }
+                });
+
+        boolean ehIngles = remoteConfig.getBoolean("idioma");
+
+        if (ehIngles) {
+            lista.setAdapter(new LivroInvertidoAdapter(livros));
+        } else {
+            lista.setAdapter(new LivroAdapter(livros));
+        }
 
 
     }
