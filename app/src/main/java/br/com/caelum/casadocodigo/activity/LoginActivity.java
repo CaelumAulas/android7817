@@ -14,6 +14,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 import br.com.caelum.casadocodigo.R;
+import br.com.caelum.casadocodigo.firebase.GeradorDeToken;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -34,6 +35,8 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
         auth = FirebaseAuth.getInstance();
+
+        new GeradorDeToken().gera();
     }
 
     @Override
